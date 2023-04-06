@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashScreen_fragment">
+
+    <fragment
+        android:id="@+id/splashScreen_fragment"
+        android:name="com.ghomashtchi.memoria.ui.SplashScreenFragment"
+        android:label="fragment_fragement1"
+        tools:layout="@layout/fragment_splash_screen" >
+        <action
+            android:id="@+id/action_splashScreen_fragment_to_logIn_Fragment"
+            app:destination="@id/logIn_Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/logIn_Fragment"
+        android:name="com.ghomashtchi.memoria.ui.LogIn_Fragment"
+        android:label="LogIn_Fragment"
+        tools:layout="@layout/fragment_log_in">
+        <action
+            android:id="@+id/action_logIn_Fragment_to_hausapothekefragment"
+            app:destination="@id/hausapothekefragment" />
+        <action
+            android:id="@+id/action_logIn_Fragment_to_registrationButton"
+            app:destination="@id/registrationButton" />
+    </fragment>
+    <fragment
+        android:id="@+id/hausapothekefragment"
+        android:name="com.ghomashtchi.memoria.ui.Hausapothekefragment"
+        android:label="Hausapothekefragment"
+        tools:layout="@layout/fragment_hausapotheke">
+        <action
+            android:id="@+id/action_hausapothekefragment_to_categoryFragment"
+            app:destination="@id/categoryFragment" />
+        <action
+            android:id="@+id/action_hausapothekefragment_to_mementoFragment"
+            app:destination="@id/mementoFragment" />
+        <action
+            android:id="@+id/action_hausapothekefragment_to_produktBesschreibungFragment"
+            app:destination="@id/produktBesschreibungFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoryFragment"
+        android:name="com.ghomashtchi.memoria.ui.CategoryFragment"
+        android:label="fragment_category"
+        tools:layout="@layout/fragment_category" >
+        <action
+            android:id="@+id/action_categoryFragment_to_produktBesschreibungFragment"
+            app:destination="@id/produktBesschreibungFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/produktBesschreibungFragment"
+        android:name="com.ghomashtchi.memoria.ui.ProduktBesschreibungFragment"
+        android:label="fragment_produkt_besschreibung"
+        tools:layout="@layout/fragment_produkt_besschreibung" >
+        <action
+            android:id="@+id/action_produktBesschreibungFragment_to_hausapothekefragment"
+            app:destination="@id/hausapothekefragment" />
+        <argument
+            android:name="ID"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/mementoFragment"
+        android:name="com.ghomashtchi.memoria.ui.MementoFragment"
+        android:label="fragment_memento"
+        tools:layout="@layout/fragment_memento" >
+        <action
+            android:id="@+id/action_mementoFragment_to_notizenFragment"
+            app:destination="@id/notizenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/notizenFragment"
+        android:name="com.ghomashtchi.memoria.ui.NotizenFragment"
+        android:label="fragment_notizen"
+        tools:layout="@layout/fragment_notizen" >
+        <action
+            android:id="@+id/action_notizenFragment_to_confirmFragment"
+            app:destination="@id/confirmFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrationButton"
+        android:name="com.ghomashtchi.memoria.ui.RegistrationFragment"
+        android:label="fragment_registration_button"
+        tools:layout="@layout/fragment_registration_button" >
+        <action
+            android:id="@+id/action_registrationButton_to_hausapothekefragment"
+            app:destination="@id/hausapothekefragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/confirmFragment"
+        android:name="com.ghomashtchi.memoria.ui.ConfirmFragment"
+        android:label="fragment_confirm"
+        tools:layout="@layout/fragment_confirm" >
+        <action
+            android:id="@+id/action_confirmFragment_to_hausapothekefragment"
+            app:destination="@id/hausapothekefragment" />
+    </fragment>
+</navigation>
