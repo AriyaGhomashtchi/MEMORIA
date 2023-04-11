@@ -29,7 +29,7 @@ class ConfirmFragment : Fragment() {
          _binding = FragmentConfirmBinding.inflate(inflater,container,false)
         val view = binding.root
 
-        binding.confirmButton.text = "Uhrzeit ${mainViewModel.time.value} \n" +
+        binding.confirmButton.text = "Uhrzeit ${mainViewModel.time.value} Uhr\n" +
                 "${mainViewModel.date.value}"
 
         mainViewModel.medicineList.observe(viewLifecycleOwner){
