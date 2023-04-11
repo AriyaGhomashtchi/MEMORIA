@@ -1,4 +1,4 @@
-package com.ghomashtchi.memoria.testApi
+package com.ghomashtchi.memoria.data.medicineApi
 
 data class Result(
     val description: String,

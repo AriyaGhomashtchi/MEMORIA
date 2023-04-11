@@ -6,21 +6,24 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import com.ghomashtchi.memoria.R
 import com.ghomashtchi.memoria.data.model.Medicine_dto
+import com.ghomashtchi.memoria.ui.HausapothekefragmentDirections
 
 class HausApothekeAdapter2: RecyclerView.Adapter<HausApothekeAdapter2.ItemViewHolder>() {
 
-    private var dataset = mutableListOf<Medicine_dto>()
+    private var dataset = listOf<com.ghomashtchi.memoria.data.medicineApi.Result>()
 
     class ItemViewHolder(view: View): RecyclerView.ViewHolder(view){
-        val image: ImageView = view.findViewById(R.id.categoryItem_imageview)
+        val image: ImageView = view.findViewById(R.id.hausItem_imageview)
         val cardview: CardView = view.findViewById(R.id.hausItem_cardview)
-        val name: TextView = view.findViewById(R.id.categoryItem_name_textview)
+        val name: TextView = view.findViewById(R.id.hausItem_name_textview)
     }
 
-    fun submitlist(list: MutableList<Medicine_dto>){
+    fun submitlist(list: List<com.ghomashtchi.memoria.data.medicineApi.Result>){
         dataset = list
         notifyDataSetChanged()
     }
@@ -37,6 +40,11 @@ class HausApothekeAdapter2: RecyclerView.Adapter<HausApothekeAdapter2.ItemViewHo
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val medicine = dataset[position]
-
+        holder.image.load(medicine.image)
+        holder.name.text = medicine.name
+        holder.cardview.setOnClickListener {
+            Navigation.findNavController(holder.itemView)
+                .navigate(HausapothekefragmentDirections.actionHausapothekefragmentToProduktBesschreibungFragment(medicine.id))
+        }
     }
 }

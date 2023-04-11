@@ -35,9 +35,6 @@
             android:id="@+id/action_hausapothekefragment_to_categoryFragment"
             app:destination="@id/categoryFragment" />
         <action
-            android:id="@+id/action_hausapothekefragment_to_mementoFragment"
-            app:destination="@id/mementoFragment" />
-        <action
             android:id="@+id/action_hausapothekefragment_to_produktBesschreibungFragment"
             app:destination="@id/produktBesschreibungFragment" />
     </fragment>
@@ -49,6 +46,9 @@
         <action
             android:id="@+id/action_categoryFragment_to_produktBesschreibungFragment"
             app:destination="@id/produktBesschreibungFragment" />
+        <argument
+            android:name="CategoryID"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/produktBesschreibungFragment"
@@ -61,6 +61,9 @@
         <argument
             android:name="ID"
             app:argType="string" />
+        <action
+            android:id="@+id/action_produktBesschreibungFragment_to_mementoFragment"
+            app:destination="@id/mementoFragment" />
     </fragment>
     <fragment
         android:id="@+id/mementoFragment"
@@ -70,6 +73,9 @@
         <action
             android:id="@+id/action_mementoFragment_to_notizenFragment"
             app:destination="@id/notizenFragment" />
+        <argument
+            android:name="mementoID"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/notizenFragment"
@@ -79,6 +85,9 @@
         <action
             android:id="@+id/action_notizenFragment_to_confirmFragment"
             app:destination="@id/confirmFragment" />
+        <argument
+            android:name="notizenID"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/registrationButton"
@@ -97,5 +106,8 @@
         <action
             android:id="@+id/action_confirmFragment_to_hausapothekefragment"
             app:destination="@id/hausapothekefragment" />
+        <argument
+            android:name="confirmID"
+            app:argType="string" />
     </fragment>
 </navigation>

@@ -5,18 +5,18 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.appcompat.view.menu.MenuView.ItemView
 import androidx.cardview.widget.CardView
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import coil.load
 import com.ghomashtchi.memoria.R
+import com.ghomashtchi.memoria.data.medicineApi.Result
 import com.ghomashtchi.memoria.ui.HausapothekefragmentDirections
 
 class HausApothekeAdapter1: RecyclerView.Adapter<HausApothekeAdapter1.ItemViewHolder>() {
 
-    private var dataset = listOf<com.ghomashtchi.memoria.testApi.Result>()
+    private var dataset = listOf<Result>()
 
     class ItemViewHolder(view: View): ViewHolder(view){
         val image: ImageView = view.findViewById(R.id.hausItem_imageview)
@@ -24,7 +24,7 @@ class HausApothekeAdapter1: RecyclerView.Adapter<HausApothekeAdapter1.ItemViewHo
         val name: TextView = view.findViewById(R.id.hausItem_name_textview)
     }
 
-    fun submitlist(list: List<com.ghomashtchi.memoria.testApi.Result>){
+    fun submitlist(list: List<Result>){
         dataset = list
         notifyDataSetChanged()
     }

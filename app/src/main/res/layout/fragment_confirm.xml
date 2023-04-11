@@ -60,7 +60,7 @@
                 android:background="@drawable/category_backround">
 
                 <ImageView
-                    android:id="@+id/imageView20"
+                    android:id="@+id/image_confirm_image"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="24dp"

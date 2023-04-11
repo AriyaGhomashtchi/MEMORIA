@@ -33,13 +33,13 @@
         </androidx.cardview.widget.CardView>
 
         <TextView
-            android:id="@+id/textView10"
+            android:id="@+id/medicine_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:fontFamily="@font/lora"
             android:textSize="32sp"
-            app:layout_constraintBottom_toTopOf="@+id/imageView11"
+            app:layout_constraintBottom_toTopOf="@+id/medicine_image"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
@@ -48,7 +48,7 @@
             tools:text="Pantoprazol 20mg" />
 
         <ImageView
-            android:id="@+id/imageView11"
+            android:id="@+id/medicine_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/imagestrokeorange"
@@ -65,14 +65,14 @@
             app:cardCornerRadius="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView11">
+            app:layout_constraintTop_toBottomOf="@+id/medicine_image">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <EditText
-                    android:id="@+id/editTextTime"
+                    android:id="@+id/edit_Text_Time"
                     android:layout_width="350dp"
                     android:layout_height="50dp"
                     android:layout_marginTop="8dp"
@@ -84,7 +84,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <EditText
-                    android:id="@+id/editTextDate"
+                    android:id="@+id/edit_Text_Date"
                     android:layout_width="350dp"
                     android:layout_height="50dp"
                     android:layout_marginTop="8dp"
@@ -93,10 +93,10 @@
                     android:inputType="date"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editTextTime" />
+                    app:layout_constraintTop_toBottomOf="@+id/edit_Text_Time" />
 
                 <Button
-                    android:id="@+id/memento_button2"
+                    android:id="@+id/memento_buttontwo"
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
@@ -107,7 +107,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.456"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editTextDate"
+                    app:layout_constraintTop_toBottomOf="@+id/edit_Text_Date"
                     app:strokeColor="#D2B69F"
                     app:strokeWidth="3dp" />
             </androidx.constraintlayout.widget.ConstraintLayout>
