@@ -17,18 +17,18 @@ class NotizenFragment : Fragment() {
 
     private var _binding: FragmentNotizenBinding? = null
     private val binding get() = _binding!!
-    private val mainViewModel : MainViewModel by activityViewModels()
+    private val mainViewModel: MainViewModel by activityViewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentNotizenBinding.inflate(inflater,container,false)
+        _binding = FragmentNotizenBinding.inflate(inflater, container, false)
         val view = binding.root
 
         val getID = requireArguments().getString("notizenID")
 
-        mainViewModel.medicineList.observe(viewLifecycleOwner){
-            for (i in it){
+        mainViewModel.medicineList.observe(viewLifecycleOwner) {
+            for (i in it) {
                 if (i.id == getID) {
                     binding.medicineText.text = i.name
                     binding.medicineImage.load(i.image)
@@ -37,12 +37,16 @@ class NotizenFragment : Fragment() {
                         var time = binding.editTextTime.text.toString()
                         var date = binding.editTextDate.text.toString()
 
-                        if (!time.isNullOrEmpty()&&!date.isNullOrEmpty()){
+                        if (!time.isNullOrEmpty() && !date.isNullOrEmpty()) {
                             mainViewModel.mementotime(time)
                             mainViewModel.mementodate(date)
 
                             Navigation.findNavController(view)
-                                .navigate(NotizenFragmentDirections.actionNotizenFragmentToConfirmFragment(getID!!))
+                                .navigate(
+                                    NotizenFragmentDirections.actionNotizenFragmentToConfirmFragment(
+                                        getID!!
+                                    )
+                                )
                         }
                     }
                 }
@@ -55,6 +59,7 @@ class NotizenFragment : Fragment() {
         }
         return view
     }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

@@ -16,7 +16,7 @@ class ConfirmFragment : Fragment() {
 
     private var _binding: FragmentConfirmBinding? = null
     private val binding get() = _binding!!
-    private val mainViewModel : MainViewModel by activityViewModels()
+    private val mainViewModel: MainViewModel by activityViewModels()
 
 
     override fun onCreateView(
@@ -26,15 +26,15 @@ class ConfirmFragment : Fragment() {
 
         var getID = requireArguments().getString("confirmID")
 
-         _binding = FragmentConfirmBinding.inflate(inflater,container,false)
+        _binding = FragmentConfirmBinding.inflate(inflater, container, false)
         val view = binding.root
 
         binding.confirmButton.text = "Uhrzeit ${mainViewModel.time.value} Uhr\n" +
                 "${mainViewModel.date.value}"
 
-        mainViewModel.medicineList.observe(viewLifecycleOwner){
-            for (i in it){
-                if(i.id==getID){
+        mainViewModel.medicineList.observe(viewLifecycleOwner) {
+            for (i in it) {
+                if (i.id == getID) {
                     binding.imageConfirmImage.load(i.image)
                 }
             }
@@ -45,6 +45,7 @@ class ConfirmFragment : Fragment() {
         }
         return view
     }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

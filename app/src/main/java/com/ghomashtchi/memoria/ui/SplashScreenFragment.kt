@@ -14,7 +14,7 @@ import kotlinx.coroutines.launch
 
 class SplashScreenFragment : Fragment() {
 
-    private var _binding : FragmentSplashScreenBinding? = null
+    private var _binding: FragmentSplashScreenBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,7 +31,8 @@ class SplashScreenFragment : Fragment() {
 
         lifecycleScope.launch {
             delay(2000)
-            Navigation.findNavController(view).navigate(R.id.action_splashScreen_fragment_to_logIn_Fragment)
+            Navigation.findNavController(view)
+                .navigate(R.id.action_splashScreen_fragment_to_logIn_Fragment)
         }
 
         return view

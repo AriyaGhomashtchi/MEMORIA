@@ -15,7 +15,7 @@ import com.ghomashtchi.memoria.databinding.FragmentLogInBinding
 
 class LogIn_Fragment : Fragment() {
 
-    private var _binding : FragmentLogInBinding? = null
+    private var _binding: FragmentLogInBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -49,7 +49,11 @@ class LogIn_Fragment : Fragment() {
             }
 
             if (!accountExist) {
-                Toast.makeText(requireContext(), "Benuztername oder Passwort ist falsch", Toast.LENGTH_LONG).show()
+                Toast.makeText(
+                    requireContext(),
+                    "Benuztername oder Passwort ist falsch",
+                    Toast.LENGTH_LONG
+                ).show()
             }
         }
 

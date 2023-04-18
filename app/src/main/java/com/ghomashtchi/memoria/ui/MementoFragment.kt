@@ -16,8 +16,7 @@ class MementoFragment : Fragment() {
 
     private var _binding: FragmentMementoBinding? = null
     private val binding get() = _binding!!
-    private val mainViewModel : MainViewModel by activityViewModels()
-
+    private val mainViewModel: MainViewModel by activityViewModels()
 
 
     override fun onCreateView(
@@ -33,20 +32,25 @@ class MementoFragment : Fragment() {
                 .navigate(R.id.action_mementoFragment_to_notizenFragment)
         }
 
-        mainViewModel.medicineList.observe(viewLifecycleOwner){
+        mainViewModel.medicineList.observe(viewLifecycleOwner) {
             for (i in it) {
-                if (i.id == getID){
+                if (i.id == getID) {
                     binding.memoriaEmpfiehltText.text = i.name
                     binding.mementoImage.load(i.image)
                     binding.mementoMementoButton.setOnClickListener {
                         Navigation.findNavController(view)
-                            .navigate(MementoFragmentDirections.actionMementoFragmentToNotizenFragment(i.id))
+                            .navigate(
+                                MementoFragmentDirections.actionMementoFragmentToNotizenFragment(
+                                    i.id
+                                )
+                            )
                     }
                 }
             }
         }
         return view
     }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

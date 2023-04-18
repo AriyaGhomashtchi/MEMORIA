@@ -1,4 +1,5 @@
 package com.ghomashtchi.memoria.ui
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -15,7 +16,7 @@ class CategoryFragment : Fragment() {
 
     private var _binding: FragmentCategoryBinding? = null
     private val binding get() = _binding!!
-    private val mainViewModel : MainViewModel by activityViewModels()
+    private val mainViewModel: MainViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,9 +27,9 @@ class CategoryFragment : Fragment() {
         val getId = requireArguments().getInt("CatergoryID")
 
         val categoryAdapter = CategoryFragmentAdapter()
-            binding.recyclerviewSelection4.adapter = categoryAdapter
-        mainViewModel.categoryList.observe(viewLifecycleOwner){
-            when (it){
+        binding.recyclerviewSelection4.adapter = categoryAdapter
+        mainViewModel.categoryList.observe(viewLifecycleOwner) {
+            when (it) {
                 1 -> categoryAdapter.submitList(mainViewModel.medicineList.value!!)
                 2 -> categoryAdapter.submitList(mainViewModel.dailymedicine.value!!)
                 3 -> {
@@ -45,9 +46,11 @@ class CategoryFragment : Fragment() {
         }
         return view
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-}
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

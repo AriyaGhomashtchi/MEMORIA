@@ -14,17 +14,17 @@ import com.ghomashtchi.memoria.R
 import com.ghomashtchi.memoria.data.medicineApi.Result
 import com.ghomashtchi.memoria.ui.HausapothekefragmentDirections
 
-class HausApothekeAdapter1: RecyclerView.Adapter<HausApothekeAdapter1.ItemViewHolder>() {
+class HausApothekeAdapter1 : RecyclerView.Adapter<HausApothekeAdapter1.ItemViewHolder>() {
 
     private var dataset = listOf<Result>()
 
-    class ItemViewHolder(view: View): ViewHolder(view){
+    class ItemViewHolder(view: View) : ViewHolder(view) {
         val image: ImageView = view.findViewById(R.id.hausItem_imageview)
         val cardview: CardView = view.findViewById(R.id.hausItem_cardview)
         val name: TextView = view.findViewById(R.id.hausItem_name_textview)
     }
 
-    fun submitlist(list: List<Result>){
+    fun submitlist(list: List<Result>) {
         dataset = list
         notifyDataSetChanged()
     }
@@ -45,7 +45,11 @@ class HausApothekeAdapter1: RecyclerView.Adapter<HausApothekeAdapter1.ItemViewHo
         holder.name.text = medicine.name
         holder.cardview.setOnClickListener {
             Navigation.findNavController(holder.itemView)
-                .navigate(HausapothekefragmentDirections.actionHausapothekefragmentToProduktBesschreibungFragment(medicine.id))
+                .navigate(
+                    HausapothekefragmentDirections.actionHausapothekefragmentToProduktBesschreibungFragment(
+                        medicine.id
+                    )
+                )
         }
     }
 }

@@ -33,17 +33,19 @@ class RegistrationFragment : Fragment() {
             val password1 = binding.passwordEditButton.text.toString()
             val password2 = binding.passwordRepititionEditButton.text.toString()
 
-            if (password1 == password2){
+            if (password1 == password2) {
                 account.add(UserAccount(username.lowercase(), password2))
                 Navigation.findNavController(view)
                     .navigate(R.id.action_registrationButton_to_hausapothekefragment)
             } else {
-                Toast.makeText(requireContext(), "Passwörter stimmt nicht ein", Toast.LENGTH_LONG).show()
+                Toast.makeText(requireContext(), "Passwörter stimmt nicht ein", Toast.LENGTH_LONG)
+                    .show()
             }
         }
 
         return view
     }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
